@@ -8,5 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface URLRepo extends JpaRepository<URL,Long> {
-    Optional<URL> findByShortCode(String shortCode);
+    Optional<URL> findByShortCodeAndIsActive(String shortCode, boolean isActive);
+
+    boolean existsByShortCode(String shortCode);
 }
